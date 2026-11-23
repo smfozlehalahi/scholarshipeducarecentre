@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>স্কলারশিপ নোটিশ | Scholarship Educare Centre</title>
+<meta name="theme-color" content="#102B4E">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102B4E;--royal:#174A80;--gold:#D4B36A;--soft:#F5F7FA;--text:#182536;--line:#E3E8EF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans Bengali",system-ui,sans-serif;color:var(--text);background:var(--soft);line-height:1.7}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.head{display:flex;align-items:center;gap:12px;height:72px}
+.head img{width:48px;height:48px;object-fit:contain}
+.head strong{color:var(--navy);font-size:1rem}
+main{padding:32px 0 60px}
+.back{display:inline-block;margin-bottom:20px;color:var(--royal);text-decoration:none;font-weight:600}
+.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
+h1{color:var(--navy);font-size:1.5rem;line-height:1.4;margin-bottom:16px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:16px 0 22px;font-size:.95rem}
+dt{font-weight:700;color:var(--navy)}
+dd{margin:0}
+.summary{white-space:pre-line;margin:18px 0 24px;font-size:1rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none;font-family:inherit;font-size:.95rem}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.note{margin-top:24px;font-size:.85rem;color:#5b6a7d}
+</style>
+</head>
+<body>
+<header><div class="wrap head"><img src="logo-web.jpg" alt="Scholarship Educare Centre logo"><strong>স্কলারশিপ এডুকেয়ার সেন্টার</strong></div></header>
+<main>
+<div class="wrap">
+  <a class="back" href="index.html#scholarships">← সব নোটিশে ফিরে যান</a>
+  <div class="box" id="content"><p>লোড হচ্ছে...</p></div>
+</div>
+</main>
+<script>
+(async function(){
+  const box=document.getElementById('content');
+  const id=new URLSearchParams(location.search).get('id');
+  let list=[];
+  try{ const r=await fetch('notices.json',{cache:'no-store'}); list=await r.json(); }catch(e){}
+  const n=list.find(x=>x.id===id);
+  box.textContent='';
+  if(!n){ const p=document.createElement('p'); p.textContent='এই নোটিশটি পাওয়া যায়নি।'; box.appendChild(p); return; }
+
+  const h=document.createElement('h1'); h.textContent=n.title; box.appendChild(h);
+
+  const dl=document.createElement('dl');
+  [['তারিখ',n.date],['বিশ্ববিদ্যালয়',n.university],['দেশ',n.country],['শেষ তারিখ',n.deadline]].forEach(([k,v])=>{
+    if(!v) return;
+    const dt=document.createElement('dt'); dt.textContent=k;
+    const dd=document.createElement('dd'); dd.textContent=v;
+    dl.append(dt,dd);
+  });
+  box.appendChild(dl);
+
+  if(n.summary){ const s=document.createElement('div'); s.className='summary'; s.textContent=n.summary; box.appendChild(s); }
+
+  if(n.pdf){
+    const row=document.createElement('div'); row.className='btns';
+    const view=document.createElement('a'); view.className='btn btn-navy'; view.href=n.pdf; view.target='_blank'; view.rel='noopener'; view.textContent='PDF দেখুন';
+    const dlb=document.createElement('a'); dlb.className='btn btn-gold'; dlb.href=n.pdf; dlb.setAttribute('download',''); dlb.textContent='PDF ডাউনলোড করুন';
+    row.append(view,dlb); box.appendChild(row);
+  }
+
+  const note=document.createElement('p'); note.className='note';
+  note.textContent='সর্বশেষ ও সঠিক তথ্যের জন্য সংশ্লিষ্ট বিশ্ববিদ্যালয়ের অফিসিয়াল ঘোষণা যাচাই করুন।';
+  box.appendChild(note);
+})();
+</script>
+</body>
+</html>
