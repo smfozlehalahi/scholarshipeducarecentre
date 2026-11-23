@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102B4E"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><title>যোগাযোগ | স্কলারশিপ এডুকেয়ার সেন্টার</title><meta name="description" content="আবেদন ও যোগাযোগ: ফোন, WhatsApp, ইমেইল।"></head>
+<body>
+
+<div class="page-hd"><div class="wrap"><p class="eyebrow" style="color:#D4B36A">যোগাযোগ</p><h1>সেবার জন্য আবেদন করুন</h1><p>ফর্ম পূরণ করে WhatsApp বা ইমেইলে পাঠান।</p></div></div>
+<main class="content"><div class="wrap" style="display:grid;gap:30px;grid-template-columns:1fr">
+<form class="f" id="applyForm">
+<div class="row2"><label>পূর্ণ নাম *<input name="name" required></label><label>ইমেইল *<input name="email" type="email" required></label></div>
+<div class="row2"><label>WhatsApp নম্বর *<input name="phone" type="tel" required placeholder="01XXXXXXXXX"></label><label>বর্তমান দেশ *<input name="country" required></label></div>
+<div class="row2"><label>শিক্ষাগত যোগ্যতা *<select name="edu" required><option value="">নির্বাচন করুন</option><option>এইচএসসি</option><option>আলিম</option><option>ফাজিল</option><option>অনার্স</option><option>মাস্টার্স</option><option>পিএইচডি</option></select></label>
+<label>প্রয়োজনীয় সেবা *<select name="service" required><option value="">নির্বাচন করুন</option><option>স্কলারশিপ নির্দেশনা</option><option>বিশ্ববিদ্যালয় ও প্রোগ্রাম নির্বাচন</option><option>ডকুমেন্ট অনুবাদ ও নোটারি</option><option>সনদ প্রত্যয়ন ও ই-অ্যাপোস্টিল</option><option>LOI / মোটিভেশন লেটার / SOP</option><option>স্কিল সার্টিফিকেট সহায়তা</option><option>মেডিকেল সার্টিফিকেট সহায়তা</option><option>ইন্টারভিউ প্রস্তুতি</option><option>পাসপোর্ট ও ডকুমেন্ট প্রস্তুতি</option><option>অনলাইন আবেদন সহায়তা</option></select></label></div>
+<label>বার্তা<textarea name="message" rows="4"></textarea></label>
+<label class="check"><input type="checkbox" name="consent" required>সেবা-সংক্রান্ত যোগাযোগের জন্য আমার তথ্য ব্যবহারে সম্মতি দিচ্ছি।</label>
+<div class="btns"><button class="btn btn-gold" type="button" id="waSend">WhatsApp-এ পাঠান</button><button class="btn btn-line" type="button" id="mailSend">ইমেইলে পাঠান</button></div>
+<p class="lead" style="font-size:.85rem">ফর্মের তথ্য সার্ভারে সংরক্ষিত হয় না। পাঠানোর পর বার্তাটি WhatsApp বা ইমেইলে যাবে।</p>
+</form>
+<div class="card gold" style="cursor:default">
+<h3>সরাসরি যোগাযোগ</h3>
+<p><b>ঠিকানা:</b> কিশোরগঞ্জ, ঢাকা, বাংলাদেশ</p>
+<p><b>ফোন / WhatsApp:</b> <a href="tel:+8801322301754">01322-301754</a></p>
+<p><b>ইমেইল:</b> <a href="mailto:sec.bd2024@gmail.com">sec.bd2024@gmail.com</a></p>
+<div data-social></div>
+</div>
+</div></main>
+<script>
+(function(){
+  const f=document.getElementById("applyForm");
+  const msg=()=>{const d=new FormData(f);return ["সেবার অনুরোধ — স্কলারশিপ এডুকেয়ার সেন্টার","নাম: "+d.get("name"),"ইমেইল: "+d.get("email"),"WhatsApp: "+d.get("phone"),"বর্তমান দেশ: "+d.get("country"),"শিক্ষাগত যোগ্যতা: "+d.get("edu"),"প্রয়োজনীয় সেবা: "+d.get("service"),"বার্তা: "+(d.get("message")||"-")].join("\n");};
+  document.getElementById("waSend").onclick=()=>{ if(!f.reportValidity())return; window.open("https://wa.me/8801322301754?text="+encodeURIComponent(msg()),"_blank","noopener"); };
+  document.getElementById("mailSend").onclick=()=>{ if(!f.reportValidity())return; location.href="mailto:sec.bd2024@gmail.com?subject="+encodeURIComponent("সেবার অনুরোধ")+"&body="+encodeURIComponent(msg()); };
+})();
+</script>
+<script src="common.js"></script>
+</body></html>
