@@ -838,14 +838,6 @@ loadSch();
   tk.innerHTML=items+items;
 })();
 
-// App install
-let deferredPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
-document.getElementById('installBtn').addEventListener('click',async()=>{
-  if(deferredPrompt){ deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; return; }
-  alert('অ্যান্ড্রয়েড: ব্রাউজারের মেনু (⋮) থেকে "Install app" বা "Add to Home screen" চাপুন।\nআইফোন: Safari-তে শেয়ার বাটন থেকে "Add to Home Screen" চাপুন।');
-});
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
 </script>
 </body>
 </html>
