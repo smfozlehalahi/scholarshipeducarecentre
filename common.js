@@ -116,10 +116,10 @@
   const langOpts=[['bn','বাংলা'],['en','English'],['ar','العربية']].map(([v,t])=>`<option value="${v}" ${v===L?'selected':''}>${t}</option>`).join('');
   const header=`<header class="site"><div class="wrap hd">
     <a class="brand" href="index.html"><img src="logo-web.jpg" alt="লোগো"><span class="brand-name">স্কলারশিপ এডুকেয়ার সেন্টার</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
     <nav id="mainNav"><ul>${navLinks}<li><span class="soon">স্টুডেন্ট পোর্টাল (শীঘ্রই)</span></li></ul></nav>
     <select class="lang" id="langSel" aria-label="Language">${langOpts}</select>
     <a class="btn btn-gold cta" href="contact.html">এখনই আবেদন করুন</a>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
   </div></header>
   <div class="wrap ticker-wrap"><div class="ticker"><span class="tk-label">চলমান স্কলারশিপ সমূহ:</span><div class="tk-wrap"><div class="tk-track" id="tk"></div></div></div></div>`;
   const year=new Date().getFullYear();
