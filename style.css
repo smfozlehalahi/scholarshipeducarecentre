@@ -139,3 +139,40 @@ nav a{font-weight:600}
   .brand-name{font-size:.82rem;max-width:110px}
   .lang{padding:5px 8px;font-size:.8rem}
 }
+
+/* ---- International Scholarship Database ---- */
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.74rem;font-weight:700;white-space:nowrap}
+.b-open_now{background:#e6f6ec;color:#17693a}
+.b-upcoming{background:#e8f0fb;color:#1f4f8a}
+.b-closing_soon{background:#fff1d6;color:#8a5a00}
+.b-closed{background:#eceff3;color:#5b6a7d}
+.b-awaiting_announcement{background:#f3ecdc;color:#7a5b1f}
+.b-verification_required{background:#fde8e8;color:#9b1c1c}
+.filters{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 22px}
+.filters label{display:grid;gap:6px;font-size:.85rem;font-weight:600;color:var(--navy)}
+.filters .wide{grid-column:1/-1}
+.filters input,.filters select,.f input,.f select,.f textarea{padding:10px;border:1px solid #cfd6e0;border-radius:8px;font:inherit;font-weight:400;background:#fff;width:100%}
+.sc-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.flag{font-size:1.3rem}
+.ctry{font-size:.85rem;color:var(--muted)}
+.uni{color:var(--gold-d);font-weight:600;margin:4px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{font-size:.75rem;background:#f3f5f9;color:var(--navy);border-radius:999px;padding:3px 10px}
+.chip.gold{background:#fbf1d9;color:#7a5b1f}
+.meta.small{font-size:.8rem}
+.country-card{text-align:start;cursor:pointer;font:inherit;border:1px solid var(--line);width:100%}
+.dl-row{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:8px 16px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.dl-row dt{font-weight:700;color:var(--navy)}
+.dl-row dd{margin:0}
+.detail h3{margin-top:28px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+table.adm{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
+table.adm th,table.adm td{border-bottom:1px solid var(--line);padding:8px;text-align:start;vertical-align:top}
+.adm-btn{background:none;border:1px solid var(--navy);color:var(--navy);border-radius:6px;padding:4px 8px;margin:2px;font:inherit;cursor:pointer;font-size:.8rem}
+.adm-grid{display:grid;gap:18px;grid-template-columns:1fr;margin-top:18px}
+@media(min-width:800px){.adm-grid{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:6px;font-weight:600;color:var(--navy);font-size:.88rem}
+.fgrid2{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:700px){.fgrid2{grid-template-columns:1fr 1fr 1fr}}
+.dir-block{margin-bottom:18px}
+.dir-list{padding-inline-start:18px}
