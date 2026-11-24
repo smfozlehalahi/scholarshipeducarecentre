@@ -96,3 +96,26 @@ html[lang="ar"] body,html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,ht
 html[dir="rtl"] .tk-track a{border-left:none;border-right:1px solid var(--gold)}
 html[dir="rtl"] .note{border-left:none;border-right:4px solid var(--gold)}
 @media(max-width:960px){.hd .lang{margin-inline-start:auto}}
+
+/* ---- Header layout fix: keep one clean row on desktop ---- */
+.hd{flex-wrap:nowrap;gap:12px}
+.brand{flex-shrink:0;white-space:nowrap;font-size:.95rem}
+.brand img{width:46px;height:46px}
+.brand-name{white-space:nowrap}
+nav{flex:1;min-width:0;display:flex;justify-content:center}
+nav ul{flex-wrap:nowrap;gap:2px}
+nav a{white-space:nowrap;padding:8px 8px;font-size:.88rem}
+.soon{white-space:nowrap;font-size:.68rem;margin-left:2px}
+.lang{width:auto;max-width:150px;flex-shrink:0;padding:7px 12px}
+.hd .cta{flex-shrink:0;white-space:nowrap;padding:10px 16px;font-size:.88rem}
+@media(max-width:1280px){nav a{padding:8px 6px;font-size:.84rem}.soon{display:none}}
+@media(max-width:1100px){
+  .menu-btn{display:block;flex-shrink:0}
+  nav{display:none;position:absolute;top:80px;left:0;right:0;background:var(--navy);padding:12px 20px 20px;border-bottom:3px solid var(--gold);justify-content:flex-start}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;flex-wrap:nowrap}
+  nav a{font-size:1rem;padding:10px 6px}
+  .soon{display:inline-block}
+  .hd .cta{display:none}
+}
+@media(max-width:600px){.brand-name{display:none}}

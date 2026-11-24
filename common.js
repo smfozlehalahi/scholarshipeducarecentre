@@ -115,7 +115,7 @@
   const navLinks=PAGES.map(([h,l])=>`<li><a href="${h}" class="${h===cur?'active':''}">${l}</a></li>`).join('');
   const langOpts=[['bn','বাংলা'],['en','English'],['ar','العربية']].map(([v,t])=>`<option value="${v}" ${v===L?'selected':''}>${t}</option>`).join('');
   const header=`<header class="site"><div class="wrap hd">
-    <a class="brand" href="index.html"><img src="logo-web.jpg" alt="লোগো">স্কলারশিপ এডুকেয়ার সেন্টার</a>
+    <a class="brand" href="index.html"><img src="logo-web.jpg" alt="লোগো"><span class="brand-name">স্কলারশিপ এডুকেয়ার সেন্টার</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
     <nav id="mainNav"><ul>${navLinks}<li><span class="soon">স্টুডেন্ট পোর্টাল (শীঘ্রই)</span></li></ul></nav>
     <select class="lang" id="langSel" aria-label="Language">${langOpts}</select>
