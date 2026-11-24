@@ -25,7 +25,9 @@
 <script>
 (function(){
   const f=document.getElementById("applyForm");
-  const msg=()=>{const d=new FormData(f);return ["সেবার অনুরোধ — স্কলারশিপ এডুকেয়ার সেন্টার","নাম: "+d.get("name"),"ইমেইল: "+d.get("email"),"WhatsApp: "+d.get("phone"),"বর্তমান দেশ: "+d.get("country"),"শিক্ষাগত যোগ্যতা: "+d.get("edu"),"প্রয়োজনীয় সেবা: "+d.get("service"),"বার্তা: "+(d.get("message")||"-")].join("\n");};
+  const LB={bn:["সেবার অনুরোধ — স্কলারশিপ এডুকেয়ার সেন্টার","নাম: ","ইমেইল: ","WhatsApp: ","বর্তমান দেশ: ","শিক্ষাগত যোগ্যতা: ","প্রয়োজনীয় সেবা: ","বার্তা: "],en:["Service Request — Scholarship Educare Centre","Name: ","Email: ","WhatsApp: ","Current country: ","Education: ","Required service: ","Message: "],ar:["طلب خدمة — مركز سكولرشيب إديوكير","الاسم: ","البريد الإلكتروني: ","واتساب: ","الدولة الحالية: ","المؤهل الدراسي: ","الخدمة المطلوبة: ","الرسالة: "]};
+  const lang=localStorage.getItem("sec_lang")||"bn";
+  const msg=()=>{const d=new FormData(f);const b=LB[lang]||LB.bn;return [b[0],b[1]+d.get("name"),b[2]+d.get("email"),b[3]+d.get("phone"),b[4]+d.get("country"),b[5]+d.get("edu"),b[6]+d.get("service"),b[7]+(d.get("message")||"-")].join("\n");};
   document.getElementById("waSend").onclick=()=>{ if(!f.reportValidity())return; window.open("https://wa.me/8801322301754?text="+encodeURIComponent(msg()),"_blank","noopener"); };
   document.getElementById("mailSend").onclick=()=>{ if(!f.reportValidity())return; location.href="mailto:sec.bd2024@gmail.com?subject="+encodeURIComponent("সেবার অনুরোধ")+"&body="+encodeURIComponent(msg()); };
 })();
