@@ -200,3 +200,15 @@ table.adm th,table.adm td{border-bottom:1px solid var(--line);padding:8px;text-a
   .hd .cta{display:none}
   .brand-name{display:block}
 }
+
+/* Laptop/desktop: make the brand name large and fill the header */
+@media(min-width:1281px){
+  .brand{gap:16px;flex-shrink:0}
+  .brand img{width:68px;height:68px;padding:4px}
+  .brand-name{font-size:clamp(1.6rem,2.3vw,2.25rem);font-weight:700;letter-spacing:.4px;white-space:nowrap;line-height:1.15}
+  .hd{height:96px}
+  nav a{font-size:1rem;padding:10px 10px}
+  .lang{font-size:1rem}
+  .hd .cta{font-size:.98rem;padding:12px 20px}
+  nav{justify-content:center}
+}
