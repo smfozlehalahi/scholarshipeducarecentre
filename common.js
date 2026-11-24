@@ -6,7 +6,6 @@
   if(L==='ar'){ document.head.insertAdjacentHTML('beforeend','<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">'); }
 
   const DICT={
-  "আন্তর্জাতিক স্কলারশিপ":["International Scholarships","المنح الدولية"],
   "হোম":["Home","الرئيسية"],"আমাদের সম্পর্কে":["About Us","من نحن"],"সেবাসমূহ":["Services","خدماتنا"],"স্কলারশিপ":["Scholarships","المنح الدراسية"],
   "গন্তব্য দেশ":["Destinations","وجهات الدراسة"],"প্রশ্নোত্তর":["FAQ","الأسئلة الشائعة"],"যোগাযোগ":["Contact","تواصل معنا"],
   "স্টুডেন্ট পোর্টাল (শীঘ্রই)":["Student Portal (Coming Soon)","بوابة الطالب (قريبا)"],"এখনই আবেদন করুন":["Apply Now","قدّم الآن"],
@@ -102,7 +101,7 @@
     ar:'أندرويد: اضغط على قائمة المتصفح (⋮) واختر "Install app" أو "Add to Home screen".\nآيفون: في Safari اضغط زر المشاركة واختر "Add to Home Screen".'};
 
   const WA='https://wa.me/8801322301754', FB='https://www.facebook.com/share/1CM7x76vGe/', MAIL='mailto:sec.bd2024@gmail.com', TEL='tel:+8801322301754';
-  const PAGES=[['index.html','হোম'],['about.html','আমাদের সম্পর্কে'],['services.html','সেবাসমূহ'],['scholarships.html','স্কলারশিপ'],['intl.html','আন্তর্জাতিক স্কলারশিপ'],['destinations.html','গন্তব্য দেশ'],['faq.html','প্রশ্নোত্তর'],['contact.html','যোগাযোগ']];
+  const PAGES=[['index.html','হোম'],['about.html','আমাদের সম্পর্কে'],['services.html','সেবাসমূহ'],['scholarships.html','স্কলারশিপ'],['destinations.html','গন্তব্য দেশ'],['faq.html','প্রশ্নোত্তর'],['contact.html','যোগাযোগ']];
   const cur=location.pathname.split('/').pop()||'index.html';
   const ICON={
     wa:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>',
