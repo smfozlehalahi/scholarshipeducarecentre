@@ -176,3 +176,27 @@ table.adm th,table.adm td{border-bottom:1px solid var(--line);padding:8px;text-a
 @media(min-width:700px){.fgrid2{grid-template-columns:1fr 1fr 1fr}}
 .dir-block{margin-bottom:18px}
 .dir-list{padding-inline-start:18px}
+
+.entry-grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:760px){.entry-grid{grid-template-columns:1fr 1fr}}
+.entry-card{display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:16px;text-decoration:none;color:#fff;background:var(--navy);border:2px solid var(--gold);box-shadow:0 6px 18px rgba(16,43,78,.15);transition:transform .2s}
+.entry-card:hover{transform:translateY(-2px)}
+.entry-card h3{color:#fff;font-size:1.15rem;margin:0 0 4px}
+.entry-card p{color:#d6e0ee;margin:0;font-size:.92rem}
+.entry-card.admin{background:#fff;color:var(--navy)}
+.entry-card.admin h3{color:var(--navy)}
+.entry-card.admin p{color:var(--muted)}
+.entry-ico{font-size:2rem;flex-shrink:0}
+.entry-go{margin-inline-start:auto;color:var(--gold);font-weight:700;white-space:nowrap}
+.entry-card.admin .entry-go{color:var(--gold-d)}
+
+/* Header: switch to menu button on laptops too, so nothing overlaps */
+@media(max-width:1280px){
+  .menu-btn{display:block;order:10;flex-shrink:0}
+  nav{display:none;position:absolute;top:80px;left:0;right:0;background:var(--navy);padding:12px 20px 20px;border-bottom:3px solid var(--gold);justify-content:flex-start}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;flex-wrap:nowrap}
+  nav a{font-size:1rem;padding:10px 6px}
+  .hd .cta{display:none}
+  .brand-name{display:block}
+}

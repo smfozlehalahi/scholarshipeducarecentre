@@ -251,9 +251,10 @@ async function pageAdmin(){
   if(!sb) return noDb();
   const {data:{session}}=await sb.auth.getSession();
   if(!session) return loginView();
-  const {data:adm}=await sb.from('admins').select('user_id').eq('user_id',session.user.id).maybeSingle();
-  if(!adm){ await sb.auth.signOut(); return loginView(t('a_not_admin')); }
-  dashboard();
+  const {data:isAdm,error:admErr}=await sb.rpc('is_admin');
+  if(admErr) return loginView(t('a_error')+': '+admErr.message);
+  if(!isAdm){ await sb.auth.signOut(); return loginView(t('a_not_admin')+' ('+session.user.email+')'); }
+  dashboard().catch(fail);
 }
 
 function loginView(msg){
