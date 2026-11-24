@@ -212,3 +212,12 @@ table.adm th,table.adm td{border-bottom:1px solid var(--line);padding:8px;text-a
   .hd .cta{font-size:.98rem;padding:12px 20px}
   nav{justify-content:center}
 }
+
+/* Laptop width where the menu button is used: fill the header with a larger brand name */
+@media(min-width:601px) and (max-width:1280px){
+  .hd{height:92px}
+  .brand img{width:64px;height:64px;padding:4px}
+  .brand-name{display:block;white-space:nowrap;font-size:clamp(1.35rem,2.4vw,1.85rem);font-weight:700;letter-spacing:.3px;max-width:none}
+  .menu-btn{font-size:1.4rem;padding:8px 16px}
+  nav{top:92px}
+}
